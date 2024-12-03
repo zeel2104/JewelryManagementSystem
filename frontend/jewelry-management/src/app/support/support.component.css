@@ -1,0 +1,122 @@
+/* General styles for support & FAQ page */
+.support-faq {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #1B4D3E;
+}
+
+.support-faq h2 {
+    font-size: 2.5em;
+    text-align: center;
+    color: #006E6D;
+    margin-bottom: 20px;
+}
+
+.faq-section h3 {
+    font-size: 1.8em;
+    text-align: center;
+    color: #1B4D3E;
+    margin-bottom: 20px;
+}
+
+/* Container for FAQ cards in grid layout */
+.faq-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* FAQ Card styles */
+.faq-card {
+    background-color: #F0F8F8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.faq-card:hover {
+    transform: translateY(-5px);
+}
+
+.faq-card h4 {
+    font-size: 1.2em;
+    color: #006E6D;
+    margin-bottom: 10px;
+}
+
+.faq-card p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Contact Form styling */
+.contact-form {
+    padding: 20px;
+    background-color: #F0F8F8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.contact-form h3 {
+    font-size: 1.8em;
+    color: #006E6D;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1em;
+    color: #1B4D3E;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #006E6D;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #004D4D;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .faq-card-container {
+        grid-template-columns: 1fr; /* Stacks the FAQ cards in one column for smaller screens */
+    }
+
+    .support-faq {
+        padding: 15px;
+    }
+
+    .faq-card h4 {
+        font-size: 1.1em;
+    }
+
+    .contact-form button {
+        font-size: 0.9em;
+    }
+}

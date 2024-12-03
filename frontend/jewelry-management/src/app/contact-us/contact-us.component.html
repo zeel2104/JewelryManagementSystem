@@ -1,0 +1,50 @@
+<!-- contact-us.component.html -->
+<div class="page-content">
+  <div class="contact-us">
+    <h1>About Us</h1>
+    
+    <!-- Owner's Description -->
+    <div class="owner-description">
+      <h2>About the Owner</h2>
+      <p>
+        Our jewelry collection is curated by Arasi, a passionate jeweler with over 20 years of experience in crafting
+        exquisite and unique pieces. Arasi believes that jewelry is not just an accessory but a form of self-expression.
+        Each piece is crafted with the utmost care, dedication, and attention to detail to bring out the best in every design.
+      </p>
+    </div>
+    
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h2>Get in Touch</h2>
+      <form (ngSubmit)="onSubmit()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" [(ngModel)]="contactForm.name" name="name" required />
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="contactForm.email" name="email" required />
+        
+        <label for="message">Message:</label>
+        <textarea id="message" [(ngModel)]="contactForm.message" name="message" required></textarea>
+        
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="social-media">
+      <h3>Follow Us</h3>
+      <a href="https://www.instagram.com/arasiii.studio/" target="_blank" class="social-icon">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="mailto:support@example.com" target="_blank" class="social-icon">
+        <i class="fas fa-envelope"></i> Email Us
+      </a>
+      <a href="https://www.youtube.com/@Arasiii.studio" target="_blank" class="social-icon">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+      <a href="https://arasistudio.mini.site/?path=%2F" target="_blank" class="social-icon">
+        <i class="fas fa-globe"></i> Website
+      </a>
+    </div>
+  </div>
+</div>

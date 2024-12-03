@@ -1,0 +1,46 @@
+<!-- 
+
+<div class="page-content">
+
+<div *ngFor="let item of cartItems" class="cart-item">
+  <h3>{{ item.Name }}</h3>
+  <p>Price: ${{ item.Price }}</p>
+  <p>Total: ${{ item.Price * item.Quantity }}</p>
+
+  <div class="quantity-control">
+    <button (click)="decreaseQuantity(item)">-</button>
+    <span>{{ item.Quantity }}</span>
+    <button (click)="increaseQuantity(item)">+</button>
+  </div>
+
+  <button (click)="removeFromCart(item)" class="remove-button">Remove</button>
+</div>
+
+<h3>Total: ${{ total }}</h3>
+<button (click)="checkout()" class="checkout-button">Proceed to Checkout</button>
+</div> -->
+
+<div class="page-content">
+  <div *ngFor="let item of cartItems" class="cart-item">
+    <h3>{{ item.Name }}</h3>
+    
+    <!-- Product Image -->
+    <img [src]="item.ImageURL" alt="{{ item.Name }}" class="cart-item-image" *ngIf="item.ImageURL">
+
+    <!-- Product Details -->
+    <p>Price: ${{ item.Price }}</p>
+    <p>Total: ${{ item.Price * item.Quantity || 0 }}</p> <!-- Item Total for this product -->
+
+    <div class="quantity-control">
+      <button (click)="decreaseQuantity(item)">-</button>
+      <span>{{ item.Quantity }}</span>
+      <button (click)="increaseQuantity(item)">+</button>
+    </div>
+
+    <button (click)="removeFromCart(item)" class="remove-button">Remove</button>
+  </div>
+
+  <!-- Total for all items in the cart -->
+  <h3>Total: ${{ total || 0 }}</h3>
+  <button (click)="checkout()" class="checkout-button">Proceed to Checkout</button>
+</div>

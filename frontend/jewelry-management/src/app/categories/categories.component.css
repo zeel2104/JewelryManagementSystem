@@ -1,0 +1,113 @@
+/* Background styling with image and gradient overlay */
+:host {
+    display: block;
+    min-height: 100vh;
+    background: 
+      linear-gradient(rgba(1, 79, 134, 0.6), rgba(2, 115, 104, 0.6)), 
+      url('/assets/images/product1.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+  
+/* Style container for content so it's readable on top of the background */
+.category-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.85); /* Light background for content readability */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; /* Body font */
+}
+  
+.category-link {
+    display: block;
+    text-decoration: none;
+    color: inherit; /* Inherit color so it uses the same text color */
+    width: 100%; /* Full width to cover the card */
+    height: 100%; /* Full height to cover the card */
+  }
+/* Heading styling */
+.category-container h2 {
+    font-family: 'Playfair Display', serif; /* Luxurious font for headings */
+    font-size: 2.5em;
+    color: #014f86;
+    margin-bottom: 20px;
+}
+  
+/* Responsive grid layout for categories */
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+  
+/* Card styling for each category */
+.category-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+  
+/* Card content styling */
+.category-card-content {
+    text-align: center;
+    padding: 15px;
+}
+
+.category-name {
+    font-family: 'Playfair Display', serif; /* Luxurious font for category names */
+    font-size: 1.6em;
+    color: #014f86;
+    margin: 10px 0;
+}
+
+.category-description {
+    font-family: 'Montserrat', sans-serif; /* Body font for descriptions */
+    color: #027368;
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+/* Message styling when no categories are available */
+.no-categories {
+    color: #e0e0e0;
+    font-size: 1.3em;
+    font-family: 'Balqis', sans-serif; /* Body font */
+}
+  
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .category-container h2 {
+      font-size: 2em;
+    }
+  
+    .category-card {
+      padding: 15px;
+    }
+  
+    .category-name {
+      font-size: 1.4em;
+    }
+  
+    .category-description {
+      font-size: 1em;
+    }
+}

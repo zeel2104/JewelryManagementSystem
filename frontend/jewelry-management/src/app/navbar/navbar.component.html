@@ -1,0 +1,50 @@
+<!-- 
+
+  <nav class="navbar">
+    <div class="navbar-brand">
+        <a routerLink="/">Jewelry Management</a>
+    </div>
+    <div class="navbar-links-wrapper">
+        <ul class="navbar-links">
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/categories">Categories</a></li>
+            <li><a routerLink="/cart">Cart</a></li>
+            <li><a routerLink="/products">Products</a></li>
+            <li><a routerLink="/contact-us">About Us</a></li>
+            <li><a routerLink="/support">Support</a></li>
+        </ul>
+        <button class="signin-button" routerLink="/signin">Sign In</button>
+    </div>
+</nav> -->
+
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a routerLink="/">Jewelry Management</a>
+  </div>
+  <div class="navbar-links-wrapper">
+    <ul class="navbar-links">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/categories">Categories</a></li>
+      <li><a routerLink="/cart">Cart</a></li>
+      <li><a routerLink="/products">Products</a></li>
+      <li><a routerLink="/contact-us">About Us</a></li>
+      <li><a routerLink="/support">Support</a></li>
+      <!-- <span class="welcome-message">{{ userRole }} </span> -->
+      <li *ngIf="isLoggedIn && userRole === 'admin'">
+        <a routerLink="/manage">Manage</a>
+      </li>
+    </ul>
+    <div class="auth-section">
+      <!-- Show "Hi, User Name" and Logout if logged in -->
+      <div *ngIf="isLoggedIn">
+        <span class="welcome-message"> Hi, {{ userName }} </span>
+        <button class="logout-button" (click)="logout()">Log Out</button>
+      </div>
+
+      <!-- Show Sign In button if not logged in -->
+      <div *ngIf="!isLoggedIn">
+        <button class="signin-button" routerLink="/signin">Sign In</button>
+      </div>
+    </div>
+  </div>
+</nav>

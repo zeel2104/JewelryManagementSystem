@@ -1,0 +1,28 @@
+
+
+<div class="page-content">
+<div class="signup-background">
+  <div class="signup-container">
+    <h2>Create an Account</h2>
+    <form (ngSubmit)="onSubmit(signupForm)" #signupForm="ngForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" ngModel required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" ngModel required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" ngModel required>
+
+      <button type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+              <!-- Success and Error Messages -->
+              <p *ngIf="successMessage" class="message success-message">
+                {{ successMessage }}
+              </p>
+              <p *ngIf="errorMessage" class="message error-message">
+                {{ errorMessage }}
+              </p>
+    </form>
+  </div>
+</div>
+</div>

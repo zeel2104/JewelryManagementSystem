@@ -1,0 +1,42 @@
+
+
+<!-- <ng-container *ngIf="categories.length > 0">
+  <li *ngFor="let category of categories">
+    <h3>{{ category.Name }}</h3>
+    <p>{{ category.Description }}</p>
+  </li>
+</ng-container>
+
+
+<ng-container *ngIf="categories.length === 0">
+  <p>No categories available.</p>
+</ng-container>
+
+<script>
+  console.log("Current categories length:", categories.length);
+</script> -->
+
+<div class="page-content">
+
+
+<div class="category-container">
+  <h2>Explore Our Jewelry Categories</h2>
+
+  <ng-container *ngIf="categories.length > 0">
+    <ul class="category-list">
+      <li *ngFor="let category of categories" class="category-card">
+        <a [routerLink]="['/categories', category.CategoryID]" class="category-link">
+          <div class="category-card-content">
+            <h3 class="category-name">{{ category.Name }}</h3>
+            <p class="category-description">{{ category.Description }}</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </ng-container>
+
+  <ng-container *ngIf="categories.length === 0">
+    <p class="no-categories">No categories available.</p>
+  </ng-container>
+</div>
+</div>

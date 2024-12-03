@@ -1,0 +1,207 @@
+/* Background wrapper specific to the signin page */
+.signin-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: 
+    linear-gradient(rgba(1, 79, 134, 0.6), rgba(2, 115, 104, 0.6)), 
+    url('/assets/images/product1.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Centered container for the signin form */
+.signin-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transform: scale(0.98);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Form heading styling */
+.signin-container h2 {
+  color: #1B4D3E; /* Dark Peacock Blue */
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Label styling */
+label {
+  display: block;
+  font-size: 1.1em;
+  color: #555; /* Dark grey for readability */
+  text-align: left;
+  margin-top: 15px;
+}
+
+/* Input field styling */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  box-sizing: border-box;
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+/* Input focus effect */
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #006E6D; /* Peacock Green */
+  outline: none;
+  box-shadow: 0 0 4px #1B4D3E;
+}
+
+/* Remember Me styling */
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Submit button styling */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #006E6D; /* Peacock Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+/* Submit button hover effect */
+button[type="submit"]:hover {
+  background-color: #1B4D3E; /* Dark Peacock Blue on hover */
+  transform: translateY(-2px); /* Subtle lift */
+}
+
+/* Disabled button state */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Loading state for button */
+button.loading {
+  background-color: #ccc;
+  cursor: wait;
+}
+
+button.loading:after {
+  content: '...';
+  animation: dots 1.5s steps(3, end) infinite;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+@keyframes dots {
+  0%, 20% {
+    color: transparent;
+  }
+  40% {
+    color: white;
+  }
+}
+
+/* Error message styling */
+.error-message {
+  color: #e74c3c; /* Red color for errors */
+  font-size: 1em;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Auth options styling */
+.auth-options {
+  margin-top: 15px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.auth-options a {
+  color: #006E6D;
+  text-decoration: none;
+}
+
+.auth-options a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design tweaks */
+@media (max-width: 768px) {
+  .signin-container {
+    margin: 20px auto;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .signin-container h2 {
+    font-size: 1.8em;
+  }
+
+  button[type="submit"] {
+    font-size: 1em;
+    padding: 10px;
+  }
+}
+
+/* Animation for form fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .signin-background {
+    background: 
+      linear-gradient(rgba(2, 22, 29, 0.8), rgba(10, 37, 44, 0.8)), 
+      url('/assets/images/product1.jpg') no-repeat center center fixed;
+  }
+
+  .signin-container {
+    background-color: rgba(20, 20, 20, 0.9);
+    color: #f0f0f0;
+  }
+
+  input,
+  button {
+    background-color: #2a2a2a;
+    color: #fff;
+    border-color: #555;
+  }
+
+  input:focus,
+  button:focus {
+    border-color: #00afaf;
+    box-shadow: 0 0 4px #00afaf;
+  }
+}
+
+/* Hover effect for signin-container */
+.signin-container:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}

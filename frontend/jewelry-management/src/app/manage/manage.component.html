@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>Manage Users</h1>
+
+  <!-- List of users -->
+  <div *ngIf="users.length">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <button (click)="selectUser(user)" class="btn btn-primary">Edit</button>
+            <button (click)="deleteUser(user.email)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Edit user form -->
+  <div *ngIf="selectedUser" class="edit-form">
+    <h2>Edit User: {{ selectedUser.name }}</h2>
+    <form [formGroup]="editForm" (ngSubmit)="updateUser()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" formControlName="name" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input id="phoneNumber" formControlName="phoneNumber" class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-success">Save Changes</button>
+      <button type="button" class="btn btn-secondary" (click)="selectedUser = null">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>

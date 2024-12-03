@@ -1,0 +1,86 @@
+/* contact-us.component.css */
+.contact-us {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #006E6D;
+}
+
+.owner-description {
+  background-color: #E6F2F2;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.owner-description h2 {
+  color: #1B4D3E;
+}
+
+.contact-form h2 {
+  color: #1B4D3E;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #006E6D;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1B4D3E;
+}
+
+/* Styling the Social Media section */
+.social-media {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.social-media h3 {
+  color: #006E6D;
+  font-size: 1.2em;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 10px;
+  font-size: 1.2em;
+  color: #006E6D;
+  text-decoration: none;
+}
+
+.social-icon i {
+  margin-right: 8px;
+}
+
+.social-icon:hover {
+  color: #1B4D3E;
+}

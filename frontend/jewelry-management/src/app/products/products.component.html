@@ -1,0 +1,78 @@
+<div class="page-content">
+  <div class="product-catalog">
+    <h2>Our Jewelry Collection </h2>
+   
+    
+    <!-- Search and Filter Section -->
+    <div class="filter-section">
+      <input
+        type="text"
+        placeholder="Search for products..."
+        [(ngModel)]="searchQuery"
+        (input)="loadProducts()"
+        class="search-bar"
+      />
+
+      <select [(ngModel)]="selectedCategory" (change)="loadProducts()" class="filter-dropdown">
+        <option value="">All Categories</option>
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+      </select>
+
+      <select [(ngModel)]="selectedMaterial" (change)="loadProducts()" class="filter-dropdown">
+        <option value="">All Materials</option>
+        <option *ngFor="let material of materials" [value]="material">{{ material }}</option>
+      </select>
+
+      <input
+        type="number"
+        placeholder="Min Price"
+        [(ngModel)]="minPrice"
+        (input)="loadProducts()"
+        class="price-filter"
+      />
+      <input
+        type="number"
+        placeholder="Max Price"
+        [(ngModel)]="maxPrice"
+        (input)="loadProducts()"
+        class="price-filter"
+      />
+
+      <select [(ngModel)]="sortBy" (change)="loadProducts()" class="sort-dropdown">
+        <option value="">Sort by</option>
+        <option value="priceAsc">Price: Low to High</option>
+        <option value="priceDesc">Price: High to Low</option>
+        <option value="newest">Newest</option>
+      </select>
+    </div>
+    
+    <!-- Check if products are available -->
+    <div *ngIf="products && products.length > 0" class="product-grid">
+      <div class="product-card" *ngFor="let product of products">
+        
+        <!-- Product Image -->
+        <div class="product-image-wrapper">
+          <img [src]="product.ImageURL" alt="{{ product.Name }}" class="product-image" />
+        </div>
+        
+        <!-- Product Name and Details -->
+        <h3 class="product-name">{{ product.Name }}</h3>
+        <p class="product-material">{{ product.Material }}</p>
+        <p class="product-price">$ {{ product.Price }}</p> 
+        
+        <!-- Quantity Controls -->
+        <div class="quantity-control">
+          <button (click)="decreaseQuantity(product)">-</button>
+          <span>{{ product.quantity || 1 }}</span>
+          <button (click)="increaseQuantity(product)">+</button>
+        </div>
+        
+        <!-- Add to Cart Button -->
+        <button (click)="addToCart(product)" class="add-to-cart-button">Add to Cart</button>
+      </div>
+    </div>
+    
+    <!-- Message if no products are available -->
+    <p *ngIf="!products || products.length === 0">No products available.</p>
+  </div>
+</div>
